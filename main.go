@@ -41,8 +41,8 @@ func init() {
 }
 
 func main() {
-	if len(flag.Args()) > 1 && flag.Args()[1] == "-page-count" {
-		pageCount = flag.Args()[2]
+	if len(flag.Args()) > 2 && flag.Args()[1] == "-page-count" {
+		pageCount = strconv.Atoi(flag.Args()[2])
 	}
 
 	anyflipURL, err := url.Parse(flag.Args()[0])
