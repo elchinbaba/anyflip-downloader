@@ -94,7 +94,9 @@ func prepareDownload(anyflipURL *url.URL) (*flipbook, error) {
 
 	newFlipbook.title = govalidator.SafeFileName(title)
 
-	if pageCount != 0 {
+	println(pageCount)
+	
+	if pageCount > 0 {
 		newFlipbook.pageCount = pageCount
 	} else {
 		newFlipbook.pageCount, err = getPageCount(configjs)
