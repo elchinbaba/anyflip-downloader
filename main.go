@@ -39,7 +39,6 @@ func init() {
 }
 
 func main() {
-	println(flag)
 	println(flag.Parse())
 	println(flag.Args())
 	
