@@ -39,18 +39,21 @@ func init() {
 }
 
 func main() {
-	flag.Parse()
+	println(flag)
+	println(flag.Parse())
+	println(flag.Args())
+	
 	anyflipURL, err := url.Parse(flag.Args()[0])
 	if err != nil {
 		log.Fatal(err)
 	}
 
+	println(anyflipURL)
+	
 	if insecure {
 		fmt.Println("You enabled insecure downloads. This disables security checks. Stay safe!")
 		http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
 	}
-
-	println(pageCount)
 
 	fmt.Println("Preparing to download")
 	flipbook, err := prepareDownload(anyflipURL)
