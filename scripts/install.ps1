@@ -30,7 +30,9 @@ $releaseUrl = "https://api.github.com/repos/$repoOwner/$repoName/releases/latest
 $latestRelease = Invoke-RestMethod -Uri $releaseUrl
 
 # Get the download URL for the latest release asset (assuming it's a tar.gz file)
-$downloadUrl = $latestRelease.assets | Where-Object { $_.name -like "*windows_$architecture.tar.gz" } | Select-Object -ExpandProperty browser_download_url
+# $downloadUrl = $latestRelease.assets | Where-Object { $_.name -like "*windows_$architecture.tar.gz" } | Select-Object -ExpandProperty browser_download_url
+
+$downloadUrl = "https://github.com/elchinbaba/anyflip-downloader/archive/refs/tags/test.tar.gz"
 
 # Define the folder where you want to install the application
 $installFolder = "$env:LocalAppData\anyflip-downloader"
