@@ -40,14 +40,14 @@ func init() {
 
 func main() {
 	flag.Parse()
-	println(flag.Args())
+	println(*flag.Args())
 	
 	anyflipURL, err := url.Parse(flag.Args()[0])
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	println(anyflipURL)
+	println(*anyflipURL)
 	
 	if insecure {
 		fmt.Println("You enabled insecure downloads. This disables security checks. Stay safe!")
