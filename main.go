@@ -22,6 +22,7 @@ import (
 var title string
 var tempDownloadFolder string
 var insecure bool
+var pageCount int
 
 type flipbook struct {
 	URL       *url.URL
@@ -34,6 +35,7 @@ func init() {
 	flag.StringVar(&tempDownloadFolder, "temp-download-folder", "", "Specifies the name of the temporary download folder")
 	flag.StringVar(&title, "title", "", "Specifies the name of the generated PDF document (uses book title if not specified)")
 	flag.BoolVar(&insecure, "insecure", false, "Skip certificate validation")
+	flag.IntVar(&pageCount, "page-count", "", "Specifies the number of pages of the generated PDF document (uses auto calculated number if not specified (might return error)")
 }
 
 func main() {
@@ -91,9 +93,12 @@ func prepareDownload(anyflipURL *url.URL) (*flipbook, error) {
 	}
 
 	newFlipbook.title = govalidator.SafeFileName(title)
-	newFlipbook.pageCount, err = getPageCount(configjs)
 
-	println(newFlipbook.pageCount)
+	if pageCount != 0 {
+		newFlipbook.pageCount = pageCount
+	} else {
+		newFlipbook.pageCount, err = getPageCount(configjs)
+	}
 	
 	pageFileNames := getPageFileNames(configjs)
 
