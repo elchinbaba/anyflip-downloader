@@ -50,6 +50,8 @@ func main() {
 		http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
 	}
 
+	println(pageCount)
+
 	fmt.Println("Preparing to download")
 	flipbook, err := prepareDownload(anyflipURL)
 	if err != nil {
