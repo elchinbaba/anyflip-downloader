@@ -36,10 +36,11 @@ func init() {
 	flag.StringVar(&title, "title", "", "Specifies the name of the generated PDF document (uses book title if not specified)")
 	flag.BoolVar(&insecure, "insecure", false, "Skip certificate validation")
 	flag.IntVar(&pageCount, "page-count", 0, "Specifies the number of pages of the generated PDF document (uses auto calculated number if not specified (might return error)")
+
+	flag.Parse()
 }
 
 func main() {
-	flag.Parse()
 	println(flag.Args()[0])
 	println(flag.Args()[1])
 	println(flag.Args()[2])
@@ -48,8 +49,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	println(anyflipURL)
 	
 	if insecure {
 		fmt.Println("You enabled insecure downloads. This disables security checks. Stay safe!")
