@@ -21,13 +21,13 @@ The install scripts are the suggested installation method for most users.
 #### Linux/MacOS
 Open the terminal and execute
 ```sh
-curl -L https://raw.githubusercontent.com/elchinbaba/anyflip-downloader/elchinbaba-patch-1/scripts/install.sh | /usr/bin/env bash
+curl -L https://raw.githubusercontent.com/elchinbaba/anyflip-downloader/main/scripts/install.sh | /usr/bin/env bash
 ```
 
 #### Windows
 Open PowerShell and execute
 ```PowerShell
-. { iwr -useb https://raw.githubusercontent.com/elchinbaba/anyflip-downloader/elchinbaba-patch-1/scripts/install.ps1 } | iex;
+. { iwr -useb https://raw.githubusercontent.com/elchinbaba/anyflip-downloader/main/scripts/install.ps1 } | iex;
 ```
 
 ### Go install
