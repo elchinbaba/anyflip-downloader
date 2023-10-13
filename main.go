@@ -40,8 +40,10 @@ func init() {
 
 func main() {
 	flag.Parse()
-	println(*flag.Args())
-	
+	println(flag.Args()[0])
+	println(flag.Args()[1])
+	println(flag.Args()[2])
+
 	anyflipURL, err := url.Parse(flag.Args()[0])
 	if err != nil {
 		log.Fatal(err)
