@@ -41,9 +41,11 @@ func init() {
 }
 
 func main() {
-	println(flag.Args()[0])
-	println(flag.Args()[1])
-	println(flag.Args()[2])
+	init()
+	
+	// if flag.Args()[1] == "-page-count" {
+	// 	pageCount = flag.Args()[2]
+	// }
 
 	anyflipURL, err := url.Parse(flag.Args()[0])
 	if err != nil {
