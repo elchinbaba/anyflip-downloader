@@ -40,7 +40,7 @@ func init() {
 
 func main() {
 	flag.Parse()
-	println(flag.Args()[0])
+	fmt.Printf(flag.Args()[0])
 
 	anyflipURL, err := url.Parse(flag.Args()[0])
 	if err != nil {
