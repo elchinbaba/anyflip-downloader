@@ -35,7 +35,7 @@ func init() {
 	flag.StringVar(&tempDownloadFolder, "temp-download-folder", "", "Specifies the name of the temporary download folder")
 	flag.StringVar(&title, "title", "", "Specifies the name of the generated PDF document (uses book title if not specified)")
 	flag.BoolVar(&insecure, "insecure", false, "Skip certificate validation")
-	flag.IntVar(&pageCount, "page-count", "", "Specifies the number of pages of the generated PDF document (uses auto calculated number if not specified (might return error)")
+	flag.IntVar(&pageCount, "page-count", 0, "Specifies the number of pages of the generated PDF document (uses auto calculated number if not specified (might return error)")
 }
 
 func main() {
