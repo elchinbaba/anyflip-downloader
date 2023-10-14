@@ -41,10 +41,6 @@ func init() {
 }
 
 func main() {
-	if len(flag.Args()) > 2 && flag.Args()[1] == "-page-count" {
-		pageCount, err := strconv.Atoi(flag.Args()[2])
-	}
-
 	anyflipURL, err := url.Parse(flag.Args()[0])
 	if err != nil {
 		log.Fatal(err)
@@ -53,6 +49,10 @@ func main() {
 	if insecure {
 		fmt.Println("You enabled insecure downloads. This disables security checks. Stay safe!")
 		http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
+	}
+	
+	if len(flag.Args()) > 2 && flag.Args()[1] == "-page-count" {
+		pageCount, err = strconv.Atoi(flag.Args()[2])
 	}
 
 	fmt.Println("Preparing to download")
