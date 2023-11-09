@@ -51,6 +51,14 @@ If you do not want to use the book title from anyflip, you can change it using t
 anyflip-downloader <url to book> -title <your book title>
 ```
 
+### Specify number of pages manually
+
+If you want to specify the number of pages for some reason you can do it using the `-page-count` flag.
+
+```sh
+anyflip-downloader <url to book> -page-count <number of pages>
+```
+
 ### Specify temporary download folder path
 
 The default temporary download folder path will be the title of the book. However, in certain situations, you might want to change the temporary download folder. For this, the `-temp-download-folder` flag exists. This folder will be deleted after a successful download.
